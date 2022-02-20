@@ -671,14 +671,15 @@ section {
 }
 .portfolio-details .portfolio-info {
   padding: 30px;
-  box-shadow: 0px 0 30px rgba(69, 80, 91, 0.08);
+  background: #3b4252;
+  box-shadow: 0px 0 30px rgba(229, 233, 240, 0.08);
 }
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eceff4;
 }
 .portfolio-details .portfolio-info ul {
   list-style: none;
