@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #eceff4;
+  background: #2e3440;
 }
 
 a {
@@ -284,13 +285,13 @@ h1, h2, h3, h4, h5, h6 {
 #hero .social-links a {
   font-size: 24px;
   display: inline-block;
-  color: #45505b;
+  color: #4c566a;
   line-height: 1;
   margin-right: 20px;
   transition: 0.3s;
 }
 #hero .social-links a:hover {
-  color: #0563bb;
+  color: #81a1c1;
 }
 @media (max-width: 992px) {
   #hero {
@@ -326,7 +327,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #45505b;
+  color: #eceff4;
 }
 .section-title h2::before {
   content: "";
@@ -344,7 +345,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #0563bb;
+  background: #5e81ac;
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -358,7 +359,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #728394;
+  color: #eceff4;
 }
 .about .content ul {
   list-style: none;
@@ -375,7 +376,7 @@ section {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: #0563bb;
+  color: #81a1c1;
   line-height: 0;
 }
 .about .content p:last-child {
@@ -518,7 +519,7 @@ section {
   margin: 0 auto 25px auto;
   list-style: none;
   text-align: center;
-  background: #fff;
+  background: #3b4252;
   border-radius: 50px;
   padding: 2px 15px;
 }
@@ -530,12 +531,12 @@ section {
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: #272829;
+  color: #4c566a;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: #0563bb;
+  color: #eceff4;
 }
 .portfolio #portfolio-flters li:last-child {
   margin-right: 0;
@@ -602,11 +603,11 @@ section {
 }
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: #45505b;
+  color: #bf616a;
   font-weight: 600;
 }
 .portfolio .portfolio-wrap .portfolio-info p {
-  color: #45505b;
+  color: #bf616a;
   font-size: 14px;
   text-transform: uppercase;
   padding: 0;
