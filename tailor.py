@@ -41,7 +41,7 @@ CHAL_CARD = """
 
 """
 
-if __name__ == "__main__":
+def commit_update() -> None:
     now = datetime.datetime.utcnow()
     DAY = now.date().isoformat()
     tmp = ""
@@ -83,7 +83,8 @@ if __name__ == "__main__":
         with open(Path("./docs/base.html"), "r") as f_base:
             f_out = f_base.read()
             f_out = f_out.replace("%t", f_out_chal_link)
-            f_out = f_out.replace("%u", now.isoformat())
+            f_out = f_out.replace("%u", now.isoformat(sep=" "))
+            global CHAL_CARD
             CHAL_CARD = CHAL_CARD.replace("%l", f'days/{f_out_img1_link}')
             CHAL_CARD = CHAL_CARD.replace("%d", DAY)
             CHAL_CARD = CHAL_CARD.replace("%n", chal["name"])
@@ -103,3 +104,29 @@ if __name__ == "__main__":
         sp.run(["cp", f_out_img3_path_in, f_out_img3_path], check=True)
         sp.run(["cp", f_out_f_path_in, f_out_f_path], check=True)
         print("Done.")
+
+def push_update() -> None:
+        sp.run("git add ./docs/days*", shell=True, check=True)
+        sp.run("git add -u", shell=True, check=True)
+        sp.run("git commit -m 'Auto Push.'", shell=True, check=True)
+        sp.run("git push", shell=True, check=True)
+
+
+if __name__ == "__main__":
+    try:
+        commit_update()
+        push_update()
+        url = ""
+        with open(Path("./err_hook"), "r") as f:
+            url = f.readlines()
+        t = sp.run((f'curl -H "Content-Type: application/json" -d'
+            " '{\"username\": \"Build Success!\", \"content\": \"Published.\"}'"
+            f' "{url[0][:-1]}"'), shell=True)
+
+    except Exception as e:
+        url = ""
+        with open(Path("./err_hook"), "r") as f:
+            url = f.readlines()
+        t = sp.run((f'curl -H "Content-Type: application/json" -d'
+            " '{\"username\": \"Build Failed!\", \"content\": \"%.\"}'"
+            f' "{url[0][:-1]}"').replace("%", str(e)), shell=True)
