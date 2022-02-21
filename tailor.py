@@ -53,7 +53,7 @@ if __name__ == "__main__":
         template = template.replace("%D", DAY)
         template = template.replace("%C", CATAGORIES[chal["catagory"]])
         template = template.replace("%?", f'{chal["difficulty"]}/10')
-        template = template.replace("%Y", chal["regex"])
+        template = template.replace("%R", chal["regex"])
         template = template.replace("%H", chal["hash"])
         template = template.replace("%T", chal["description"])
         f_out_f = f'CTFAD-{DAY}.zip'
