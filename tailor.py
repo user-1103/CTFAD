@@ -63,15 +63,15 @@ if __name__ == "__main__":
         f_out_chal = f'{DAY}.html'
         f_out_chal_link = f'days/{f_out_chal}'
         f_out_chal_path = Path(f'./docs/days/{f_out_chal}')
-        f_out_img1 = f'img1.png'
+        f_out_img1 = f'{DAY}-img1.png'
         f_out_img1_link = f'days/{f_out_img1}'
         f_out_img1_path = Path(f'./docs/days/{f_out_img1}')
         f_out_img1_path_in = Path(f'./ctfad-chals/{DAY}/{f_out_img1}')
-        f_out_img2 = f'img2.png'
+        f_out_img2 = f'{DAY}-img2.png'
         f_out_img2_link = f'days/{f_out_img2}'
         f_out_img2_path = Path(f'./docs/days/{f_out_img2}')
         f_out_img2_path_in = Path(f'./ctfad-chals/{DAY}/{f_out_img2}')
-        f_out_img3 = f'img3.png'
+        f_out_img3 = f'{DAY}-img3.png'
         f_out_img3_link = f'days/{f_out_img3}'
         f_out_img3_path = Path(f'./docs/days/{f_out_img3}')
         f_out_img3_path_in = Path(f'./ctfad-chals/{DAY}/{f_out_img3}')
@@ -80,7 +80,7 @@ if __name__ == "__main__":
         template = template.replace("%1", f_out_img1_link)
         template = template.replace("%2", f_out_img2_link)
         template = template.replace("%3", f_out_img3_link)
-        with open(Path("./docs/base.html", "r")) as f_base:
+        with open(Path("./docs/base.html"), "r") as f_base:
             f_out = f_base.read()
             f_out = f_out.replace("%t", f_out_chal_link)
             f_out = f_out.replace("%u", now.isoformat())
@@ -90,11 +90,13 @@ if __name__ == "__main__":
             CHAL_CARD = CHAL_CARD.replace("%c", chal["catagory"])
             CHAL_CARD = CHAL_CARD.replace("%j", f_out_chal_link)
             f_out = f_out.replace("%a", CHAL_CARD)
-            with open(Path("./docs/card_buffer.html", "r")) as f_buffer:
+            with open(Path("./docs/card_buffer.html"), "r") as f_buffer:
                 f_out = f_out.replace("%b", f_buffer.read())
-            with open(Path("./docs/card_buffer.html", "a")) as f_buffer:
+            with open(Path("./docs/card_buffer.html"), "a") as f_buffer:
                 f_buffer.write(CHAL_CARD)
             with open(f_out_chal_path, "w+") as f_out_tmp:
+                f_out_tmp.write(template)
+            with open(Path('./docs/index.html'), "w+") as f_out_tmp:
                 f_out_tmp.write(f_out)
         sp.run(["cp", f_out_img1_path_in, f_out_img1_path], check=True)
         sp.run(["cp", f_out_img2_path_in, f_out_img2_path], check=True)
