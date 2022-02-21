@@ -47,7 +47,7 @@ if __name__ == "__main__":
     tmp = ""
     with open(Path('./docs/template.html'), "r") as f_template:
         template = f_template.read()
-    with open(Path(f'./ctfad-chals/{DAY}/chal.json'), "r") as f_chal:
+    with open(Path(f'../ctfad-chals/{DAY}/chal.json'), "r") as f_chal:
         chal = json.load(f_chal)
         template = template.replace("%N", chal["name"])
         template = template.replace("%D", DAY)
@@ -59,22 +59,22 @@ if __name__ == "__main__":
         f_out_f = f'CTFAD-{DAY}.zip'
         f_out_f_link = f'days/{f_out_f}'
         f_out_f_path = Path(f'./docs/days/{f_out_f}')
-        f_out_f_path_in = Path(f'./ctfad-chals/{DAY}/{f_out_f}')
+        f_out_f_path_in = Path(f'../ctfad-chals/{DAY}/{f_out_f}')
         f_out_chal = f'{DAY}.html'
         f_out_chal_link = f'days/{f_out_chal}'
         f_out_chal_path = Path(f'./docs/days/{f_out_chal}')
         f_out_img1 = f'{DAY}-img1.png'
         f_out_img1_link = f'days/{f_out_img1}'
         f_out_img1_path = Path(f'./docs/days/{f_out_img1}')
-        f_out_img1_path_in = Path(f'./ctfad-chals/{DAY}/{f_out_img1}')
+        f_out_img1_path_in = Path(f'../ctfad-chals/{DAY}/{f_out_img1}')
         f_out_img2 = f'{DAY}-img2.png'
         f_out_img2_link = f'days/{f_out_img2}'
         f_out_img2_path = Path(f'./docs/days/{f_out_img2}')
-        f_out_img2_path_in = Path(f'./ctfad-chals/{DAY}/{f_out_img2}')
+        f_out_img2_path_in = Path(f'../ctfad-chals/{DAY}/{f_out_img2}')
         f_out_img3 = f'{DAY}-img3.png'
         f_out_img3_link = f'days/{f_out_img3}'
         f_out_img3_path = Path(f'./docs/days/{f_out_img3}')
-        f_out_img3_path_in = Path(f'./ctfad-chals/{DAY}/{f_out_img3}')
+        f_out_img3_path_in = Path(f'../ctfad-chals/{DAY}/{f_out_img3}')
         template = template.replace("%F", f_out_f)
         template = template.replace("%L", f_out_f_link)
         template = template.replace("%1", f_out_img1_link)
