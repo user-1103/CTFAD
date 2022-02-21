@@ -84,7 +84,7 @@ if __name__ == "__main__":
             f_out = f_base.read()
             f_out = f_out.replace("%t", f_out_chal_link)
             f_out = f_out.replace("%u", now.isoformat())
-            CHAL_CARD = CHAL_CARD.replace("%l", f_out_img1_link)
+            CHAL_CARD = CHAL_CARD.replace("%l", f'days/{f_out_img1_link}')
             CHAL_CARD = CHAL_CARD.replace("%d", DAY)
             CHAL_CARD = CHAL_CARD.replace("%n", chal["name"])
             CHAL_CARD = CHAL_CARD.replace("%c", chal["catagory"])
