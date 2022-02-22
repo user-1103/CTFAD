@@ -70,7 +70,8 @@ def commit_update() -> None:
         ADD_URL = ADD_URL.replace("%t", qp(chal["description"]))
         ADD_URL = ADD_URL.replace("%f", qp(chal["flag"]))
         print(str(len(ADD_URL)))
-        sp.run(f"curl '{ADD_URL}'", shell=True, check=True)
+        print(ADD_URL)
+        sp.run(f"curl '{ADD_URL}'", shell=True, check=True, capture_output=True)
         f_out_f = f'CTFAD-{DAY}.zip'
         f_out_f_link = f'{f_out_f}'
         f_out_f_path = Path(f'./docs/days/{f_out_f}')
