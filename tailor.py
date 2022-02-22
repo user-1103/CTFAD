@@ -6,6 +6,7 @@ import datetime
 from pathlib import Path
 import json
 import subprocess as sp
+from urllib.parse import quote_plus as qp
 
 CATAGORIES = {
         "osint": "OSINT - Using public records to find 'hidden' data.",
@@ -49,13 +50,27 @@ def commit_update() -> None:
         template = f_template.read()
     with open(Path(f'../ctfad-chals/{DAY}/chal.json'), "r") as f_chal:
         chal = json.load(f_chal)
+        ADD_URL = ""
+        with open(Path("../add_hook"), "r") as f:
+            ADD_URL = f.readlines()
+        ADD_URL = ADD_URL[0][:-1]
         template = template.replace("%N", chal["name"])
+        ADD_URL = ADD_URL.replace("%n", qp(chal["name"]))
         template = template.replace("%D", DAY)
+        ADD_URL = ADD_URL.replace("%d", qp(DAY))
         template = template.replace("%C", CATAGORIES[chal["catagory"]])
+        ADD_URL = ADD_URL.replace("%c", qp(chal["catagory"]))
         template = template.replace("%?", f'{chal["difficulty"]}/10')
+        ADD_URL = ADD_URL.replace("%?", qp(str(chal["difficulty"])))
         template = template.replace("%R", chal["regex"])
+        ADD_URL = ADD_URL.replace("%r", qp(chal["regex"]))
         template = template.replace("%H", chal["hash"])
+        ADD_URL = ADD_URL.replace("%h", qp(chal["hash"]))
         template = template.replace("%T", chal["description"])
+        ADD_URL = ADD_URL.replace("%t", qp(chal["description"]))
+        ADD_URL = ADD_URL.replace("%f", qp(chal["flag"]))
+        print(str(len(ADD_URL)))
+        sp.run(f"curl '{ADD_URL}'", shell=True, check=True)
         f_out_f = f'CTFAD-{DAY}.zip'
         f_out_f_link = f'{f_out_f}'
         f_out_f_path = Path(f'./docs/days/{f_out_f}')
@@ -117,7 +132,7 @@ if __name__ == "__main__":
         commit_update()
         push_update()
         url = ""
-        with open(Path("./err_hook"), "r") as f:
+        with open(Path("../err_hook"), "r") as f:
             url = f.readlines()
         t = sp.run((f'curl -H "Content-Type: application/json" -d'
             " '{\"username\": \"Build Success!\", \"content\": \"Published.\"}'"
@@ -125,7 +140,7 @@ if __name__ == "__main__":
 
     except Exception as e:
         url = ""
-        with open(Path("./err_hook"), "r") as f:
+        with open(Path("../err_hook"), "r") as f:
             url = f.readlines()
         t = sp.run((f'curl -H "Content-Type: application/json" -d'
             " '{\"username\": \"Build Failed!\", \"content\": \"%.\"}'"
