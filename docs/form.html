@@ -79,7 +79,7 @@
                     <div class="col-lg-4">
                         <div class="portfolio-info">
                             <h3>Submit Flag</h3>
-                            <div id="formio"></div>
+                            <div id="formio" class="score"></div>
 
 <script>
 Formio.icons = 'fontawesome';
@@ -135,7 +135,7 @@ Formio.createForm(document.getElementById('formio'), {
                         "key": "submit",
                         "type": "button",
                         "input": true,
-                        "custom": "var xhr = new XMLHttpRequest();\nlet url = `https://docs.google.com/forms/d/e/1FAIpQLSee4N57o4TtSlqtkouN9QlhDripHWae5u46D8luvNDd27XKNQ/formResponse?usp=pp_url&entry.1884353497=${data.flag}&entry.337349188=${data.email}&entry.1882530921=${data.comment}`;\nxhr.open('GET', url);\nxhr.responseType = 'document';\n\nxhr.onload = function () {\n  alert(\"Submited. Please wait while the system updates.\");\n};\n\nxhr.onerror = function () {\n  alert(\"Err. Could not submit, check your input?\");\n};\n\nxhr.send();"
+                        "custom": "var xhr = new XMLHttpRequest();\nlet url = `https://docs.google.com/forms/d/e/1FAIpQLSee4N57o4TtSlqtkouN9QlhDripHWae5u46D8luvNDd27XKNQ/formResponse?usp=pp_url&entry.1884353497=${data.flag}&entry.337349188=${data.email}&entry.1882530921=${data.comment}`;\nxhr.open('GET', url);\nxhr.responseType = 'document';\n\nxhr.onload = function () {\n  alert(\"Submited. Please wait while the system updates.\");\n};\n\nxhr.onerror = function () {\n  alert(\"Submited. Please wait while the system updates.\");\n};\n\nxhr.send();"
                     }
                 ],
                 "input": true,
@@ -152,9 +152,85 @@ Formio.createForm(document.getElementById('formio'), {
 </script>
 
                         </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="portfolio-info">
+                            <h3>Register</h3>
+                            <div id="formio2" class="score"></div>
 
+<script>
+Formio.icons = 'fontawesome';
+Formio.createForm(document.getElementById('formio2'), {
+
+    "components": [
+            {
+                "display": "form",
+                "settings": {
+                    "pdf": {
+                        "id": "1ec0f8ee-6685-5d98-a847-26f67b67d6f0",
+                        "src": "https://files.form.io/pdf/5692b91fd1028f01000407e3/file/1ec0f8ee-6685-5d98-a847-26f67b67d6f0"
+                    }
+                },
+                "components": [
+                    {
+                        "label": "Flag",
+                        "placeholder": "CTFAD{$0m_3133t_h3r3}",
+                        "tableView": true,
+                        "validate": {
+                            "required": true
+                        },
+                        "key": "flag",
+                        "type": "textfield",
+                        "input": true
+                    },
+                    {
+                        "label": "Email",
+                        "placeholder": "example@example.com",
+                        "description": "Note: You must be registered to recieve credit.",
+                        "tableView": true,
+                        "validate": {
+                            "required": true
+                        },
+                        "key": "email",
+                        "type": "email",
+                        "input": true
+                    },
+                    {
+                        "label": "Comment",
+                        "placeholder": "10/10, would hack again.",
+                        "tableView": true,
+                        "key": "comment",
+                        "type": "textfield",
+                        "input": true
+                    },
+                    {
+                        "label": "Submit",
+                        "action": "custom",
+                        "showValidations": false,
+                        "disableOnInvalid": true,
+                        "tableView": false,
+                        "key": "submit",
+                        "type": "button",
+                        "input": true,
+                        "custom": "var xhr = new XMLHttpRequest();\nlet url = `https://docs.google.com/forms/d/e/1FAIpQLSee4N57o4TtSlqtkouN9QlhDripHWae5u46D8luvNDd27XKNQ/formResponse?usp=pp_url&entry.1884353497=${data.flag}&entry.337349188=${data.email}&entry.1882530921=${data.comment}`;\nxhr.open('GET', url);\nxhr.responseType = 'document';\n\nxhr.onload = function () {\n  alert(\"Submited. Please wait while the system updates.\");\n};\n\nxhr.onerror = function () {\n  alert(\"Submited. Please wait while the system updates.\");\n};\n\nxhr.send();"
+                    }
+                ],
+                "input": true,
+                "key": "",
+                "tableView": false,
+                "label": ""
+            }
+        ]
+    }).then(function(form) {
+  form.on('submit', function(submission) {
+    console.log(submission);
+  });
+});
+</script>
+
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </section><!-- End Portfolio Details Section -->
 
