@@ -27,6 +27,12 @@
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    -->
+<link rel="stylesheet" href="https://cdn.form.io/formiojs/formio.full.min.css">
+<script src="https://cdn.form.io/formiojs/formio.full.min.js"></script>
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -73,45 +79,77 @@
                     <div class="col-lg-4">
                         <div class="portfolio-info">
                             <h3>Submit Flag</h3>
-                            <form action="https://docs.google.com/forms/d/e/1FAIpQLSe-eyt3GddBq6GIMglAvKpdKP_WZcoLsCSE-VovK0ZvOkgBwA/formResponse">
-                              <div class="mb-3">
-                                    <input type="hidden"
-                                    name="usp" value="pp_url">
+                            <div id="formio"></div>
 
-                                    <label for="entry.308311016" 
-                                    class="form-label">
-                                        Email address
-                                    </label>
-                                    <input type="email" 
-                                    class="form-control" 
-                                    id="entry.308311016" 
-                                    name="entry.308311016"
-                                    aria-describedby="emailHelp">
+<script>
+Formio.icons = 'fontawesome';
+Formio.createForm(document.getElementById('formio'), {
 
-                                    <!--
-                                    <div id="emailHelp" 
-                                    class="form-text">
-                                        This will be used to track your points
-                                        and verify identiy for prizes. It will
-                                        no
-                                    </div>
-                                    -->
-                                    </div>
-                                    <div class="mb-3">
-                                    <label for="entry.662606994" 
-                                    class="form-label">
-                                        Flag
-                                    </label>
-                                    <input type="text"
-                                    class="form-control" 
-                                    name="entry.662606994"
-                                    id="entry.662606994">
-                                    </div>
-                                    <button type="submit" 
-                                    class="btn btn-primary">
-                                        Submit
-                                    </button>
-                            </form>
+    "components": [
+            {
+                "display": "form",
+                "settings": {
+                    "pdf": {
+                        "id": "1ec0f8ee-6685-5d98-a847-26f67b67d6f0",
+                        "src": "https://files.form.io/pdf/5692b91fd1028f01000407e3/file/1ec0f8ee-6685-5d98-a847-26f67b67d6f0"
+                    }
+                },
+                "components": [
+                    {
+                        "label": "Flag",
+                        "placeholder": "CTFAD{$0m_3133t_h3r3}",
+                        "tableView": true,
+                        "validate": {
+                            "required": true
+                        },
+                        "key": "flag",
+                        "type": "textfield",
+                        "input": true
+                    },
+                    {
+                        "label": "Email",
+                        "placeholder": "example@example.com",
+                        "description": "Note: You must be registered to recieve credit.",
+                        "tableView": true,
+                        "validate": {
+                            "required": true
+                        },
+                        "key": "email",
+                        "type": "email",
+                        "input": true
+                    },
+                    {
+                        "label": "Comment",
+                        "placeholder": "10/10, would hack again.",
+                        "tableView": true,
+                        "key": "comment",
+                        "type": "textfield",
+                        "input": true
+                    },
+                    {
+                        "label": "Submit",
+                        "action": "custom",
+                        "showValidations": false,
+                        "disableOnInvalid": true,
+                        "tableView": false,
+                        "key": "submit",
+                        "type": "button",
+                        "input": true,
+                        "custom": "var xhr = new XMLHttpRequest();\nlet url = `https://docs.google.com/forms/d/e/1FAIpQLSee4N57o4TtSlqtkouN9QlhDripHWae5u46D8luvNDd27XKNQ/formResponse?usp=pp_url&entry.1884353497=${data.flag}&entry.337349188=${data.email}&entry.1882530921=${data.comment}`;\nxhr.open('GET', url);\nxhr.responseType = 'document';\n\nxhr.onload = function () {\n  alert(\"Submited. Please wait while the system updates.\");\n};\n\nxhr.onerror = function () {\n  alert(\"Err. Could not submit, check your input?\");\n};\n\nxhr.send();"
+                    }
+                ],
+                "input": true,
+                "key": "",
+                "tableView": false,
+                "label": ""
+            }
+        ]
+    }).then(function(form) {
+  form.on('submit', function(submission) {
+    console.log(submission);
+  });
+});
+</script>
 
                         </div>
 
