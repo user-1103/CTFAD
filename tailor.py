@@ -90,7 +90,7 @@ def commit_update() -> None:
         f_out_img3 = f'{DAY}-img3.png'
         f_out_img3_link = f'{f_out_img3}'
         f_out_img3_path = Path(f'./docs/days/{f_out_img3}')
-        f_out_img3_path_in = Path(f'../ctfad-chals/{DAY}/img3.ong')
+        f_out_img3_path_in = Path(f'../ctfad-chals/{DAY}/img3.png')
         template = template.replace("%F", f_out_f)
         template = template.replace("%L", f_out_f_link)
         template = template.replace("%1", f_out_img1_link)
