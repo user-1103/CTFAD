@@ -1057,3 +1057,9 @@ section {
 .score button {
   background: #88c0d0;
   }
+
+/* Form stuff */
+input {
+  background: #434c5e !important;
+  border-color: #3b4252 !important;
+}
