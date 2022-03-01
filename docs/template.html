@@ -89,6 +89,63 @@
                                     </a>
                                 </li>
                             </ul>
+                            <form>
+                                <div class="form-floating mb-3">
+                                    <label for="flag_guess" class="form-label">
+                                        Submit Flag
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control form-control-lg"
+                                        id="flag_guess"
+                                        required="true" 
+                                        placeholder="CTFAD{$0m3_1337_h3r3}">
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <label for="username" class="form-label">
+                                        Username
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control"
+                                        id="username" 
+                                        placeholder="haxsor1"
+                                        pattern="\w*"
+                                        required="true">
+                                    <div id="username_help" class="form-text">
+                                        Enter the username you want to 
+                                        associate the points for this flag with.
+                                        If you haven't already, you should
+                                        register this username
+                                        so you can claim prizes.
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" 
+                                    class="form-check-input" 
+                                    id="do_register">
+                                    <label class="form-check-label" 
+                                        for="do_register">
+                                        Register Account?
+                                    </label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <label for="email" class="form-label">
+                                        Email
+                                    </label>
+                                    <input type="email" 
+                                        class="form-control"
+                                        id="email" 
+                                        placeholder="haxsor1@example.com">
+                                    <div id="email_help" class="form-text">
+                                    This will only ever be used to verify you
+                                    own the username and the points.
+                                    It will not be shared or made publicly
+                                    visible.
+                                    </div>
+                                </div>
+                                <button type="submit" 
+                                class="btn btn-primary">
+                                Submit Flag</button>
+                            </form>
                         </div>
                         <div class="portfolio-description">
                             <h2>%N</h2>
