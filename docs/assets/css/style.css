@@ -1080,7 +1080,7 @@ input[type="email"] {
   border-color: #3b4252 !important;
 }
 
-input[type="submit"] {
+button[type="submit"] {
   background: #88c0d0 !important;
   border-color: #3b4252 !important;
 }
