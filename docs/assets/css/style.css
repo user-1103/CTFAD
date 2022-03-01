@@ -1059,6 +1059,13 @@ section {
   }
 
 /* Form stuff */
+input:focus{
+  color: #eceff4 !important;
+}
+
+input:focus{
+  border-color: #3b4252 !important;
+}
 input[type="text"] {
   background: #434c5e !important;
   border-color: #3b4252 !important;
