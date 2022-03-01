@@ -1063,3 +1063,18 @@ input[type="text"] {
   background: #434c5e !important;
   border-color: #3b4252 !important;
 }
+
+input[type="checkbox"]:checked {
+  background: #a3be8c !important;
+  border-color: #3b4252 !important;
+}
+
+input[type="checkbox"] {
+  background: #434c5e !important;
+  border-color: #3b4252 !important;
+}
+
+input[type="email"] {
+  background: #434c5e !important;
+  border-color: #3b4252 !important;
+}
