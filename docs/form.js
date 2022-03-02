@@ -21,6 +21,8 @@ function check_flag() {
     let flag_hash = document.getElementById("flag_hash").innerHTML;
     let username_element = document.getElementById("A1");
     let check_element = document.getElementById("A2");
+    let sub_element = document.getElementById("sub_but");
+    let email_element = document.getElementById("B1");
     console.log(flag_hash);
     console.log(flag_guess);
     digestMessage(flag_guess).then(
@@ -29,11 +31,14 @@ function check_flag() {
                 notify_send("✓");
                 username_element.classList.remove("d-none");
                 check_element.classList.remove("d-none");
+                sub_element.classList.remove("d-none");
                 console.log(guess_hash);
             } else {
                 notify_send("✕");
                 username_element.classList.add("d-none");
                 check_element.classList.add("d-none");
+                sub_element.classList.add("d-none");
+                email_element.classList.add("d-none");
                 console.log(guess_hash);
             }
         }
