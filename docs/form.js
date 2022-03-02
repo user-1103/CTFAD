@@ -24,7 +24,7 @@ function check_flag() {
     let sub_element = document.getElementById("sub_but");
     let email_element = document.getElementById("B1");
     let comment_element = document.getElementById("C1");
-    let check_element2 = document.getElementById("do_comment");
+    let check_element2 = document.getElementById("A3");
     console.log(flag_hash);
     console.log(flag_guess);
     digestMessage(flag_guess).then(
