@@ -75,11 +75,11 @@ function check_reg(){
 }
 
 function send_request(){
-    let comment = encodeURIComponent(document.getElementById("comment").value || "No Comment");
-    let flag = encodeURIComponent(document.getElementById("flag_guess").value);
-    let username = encodeURIComponent(document.getElementById("username").value);
-    let email = encodeURIComponent(document.getElementById("email").value);
-    let sub_element = encodeURIComponent(document.getElementById("sub_but"));
+    let comment = encodeURI(document.getElementById("comment").value || "No Comment");
+    let flag = encodeURI(document.getElementById("flag_guess").value);
+    let username = encodeURI(document.getElementById("username").value);
+    let email = encodeURI(document.getElementById("email").value);
+    let sub_element = encodeURI(document.getElementById("sub_but"));
     if (email){
         let url = `https://docs.google.com/forms/d/e/1FAIpQLSe-eyt3GddBq6GIMglAvKpdKP_WZcoLsCSE-VovK0ZvOkgBwA/formResponse?usp=pp_url&entry.308311016=${email}&entry.662606994=${username}`;
         fetch(url, {mode: 'no-cors'}).then(
