@@ -23,6 +23,8 @@ function check_flag() {
     let check_element = document.getElementById("A2");
     let sub_element = document.getElementById("sub_but");
     let email_element = document.getElementById("B1");
+    let comment_element = document.getElementById("C1");
+    let check_element2 = document.getElementById("do_comment");
     console.log(flag_hash);
     console.log(flag_guess);
     digestMessage(flag_guess).then(
@@ -32,6 +34,7 @@ function check_flag() {
                 username_element.classList.remove("d-none");
                 check_element.classList.remove("d-none");
                 sub_element.classList.remove("d-none");
+                check_element2.classList.remove("d-none");
                 console.log(guess_hash);
             } else {
                 notify_send("✕");
@@ -39,6 +42,8 @@ function check_flag() {
                 check_element.classList.add("d-none");
                 sub_element.classList.add("d-none");
                 email_element.classList.add("d-none");
+                check_element2.classList.add("d-none");
+                comment_element.classList.add("d-none");
                 console.log(guess_hash);
             }
         }
@@ -47,6 +52,16 @@ function check_flag() {
             notify_send('?');
         }
     );
+}
+
+function check_comment(){
+    let comment_element = document.getElementById("C1");
+    let check_element2 = document.getElementById("do_comment");
+    if (check_element2.checked){
+        comment_element.classList.remove("d-none");
+    } else {
+        comment_element.classList.add("d-none");
+    }
 }
 
 function check_reg(){
@@ -58,3 +73,6 @@ function check_reg(){
         email_element.classList.add("d-none");
     }
 }
+
+function send_request(flag, username, comment="", email=null){
+

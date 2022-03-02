@@ -132,6 +132,16 @@
                                         Register Account?
                                     </label>
                                 </div>
+                                <div id="A3" class="mb-3 form-check d-none">
+                                    <input type="checkbox" 
+                                    class="form-check-input" 
+                                    id="do_register"
+                                    oninput="check_comment()">
+                                    <label class="form-check-label" 
+                                        for="do_comment">
+                                        Leave Comment?
+                                    </label>
+                                </div>
                                 <div id="B1" class="form-floating mb-3 d-none">
                                     <input type="email" 
                                         class="form-control"
@@ -146,6 +156,15 @@
                                     It will not be shared or made publicly
                                     visible.
                                     </div>
+                                </div>
+                                <div id="C1" class="form-floating mb-3 d-none">
+                                    <input type="text" 
+                                        class="form-control"
+                                        id="comment" 
+                                        placeholder="10/10 would hack again.">
+                                    <label for="text" class="form-label">
+                                        Comment
+                                    </label>
                                 </div>
                                 <button type="submit" 
                                 class="btn btn-primary d-none" id="sub_but">
