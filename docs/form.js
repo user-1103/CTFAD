@@ -1,3 +1,6 @@
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 async function digestMessage(message) {
     // Stolen striaght from https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest#converting_a_digest_to_a_hex_string
@@ -88,11 +91,15 @@ function send_request(){
                     sub_element.innerHTML = `ERR: ${res.status}`;
                 } else {
                     sub_element.innerHTML = "SENT";
+                    sub_element.disabled = true;
                 }
             }
         ).catch(
             (res) => {
                 sub_element.innerHTML = "ERR: ?";
+                sub_element.disabled = true;
+                sleep(100);
+                sub_element.disabled = false;
             }
         );
     }
@@ -103,11 +110,15 @@ function send_request(){
                 sub_element.innerHTML = `ERR: ${res.status}`;
             } else {
                 sub_element.innerHTML = "SENT";
+                sub_element.disabled = true;
             }
         }
     ).catch(
         (res) => {
             sub_element.innerHTML = "ERR: ?";
+            sub_element.disabled = true;
+            sleep(100);
+            sub_element.disabled = false;
         }
     );
 }
