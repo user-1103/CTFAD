@@ -91,7 +91,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <form onsubmit="return false">
+                            <form onsubmit="check_flag(); return false">
                                 <div class="form-floating mb-3">
                                     <div class="input-group mb-3">
                                     <input type="text" 
@@ -168,7 +168,6 @@
                                 </div>
                                 <button type="submit" 
                                 class="btn btn-primary d-none" 
-                                onclick="send_request()"
                                 id="sub_but">
                                 Submit Flag</button>
                             </form>
