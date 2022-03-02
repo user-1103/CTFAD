@@ -11,9 +11,6 @@ async function digestMessage(message) {
     return hashHex;
 }
 
-digestMessage(text)
-    .then(digestHex => console.log(digestHex));
-
 function notify_send(message) {
     console.log(message)
 }
