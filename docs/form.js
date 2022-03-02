@@ -25,7 +25,7 @@ function check_flag() {
     console.log(flag_guess);
     digestMessage(flag_guess).then(
         (guess_hash) => {
-            if (guess_hash == flag_hash){
+            if (guess_hash == flag_hash.trim()){
                 notify_send("Nice! Thats a valid flag!");
                 username_element.classList.remove("d-none");
                 check_element.classList.remove("d-none");
