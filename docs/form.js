@@ -29,10 +29,12 @@ function check_flag() {
                 notify_send("Nice! Thats a valid flag!");
                 username_element.classList.remove("d-none");
                 check_element.classList.remove("d-none");
+                console.log(guess_hash);
             } else {
                 notify_send("Thats not the flag!");
                 username_element.classList.add("d-none");
                 check_element.classList.add("d-none");
+                console.log(guess_hash);
             }
         }
     ).catch(
