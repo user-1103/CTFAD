@@ -74,5 +74,4 @@ function check_reg(){
     }
 }
 
-function send_request(flag, username, comment="", email=null){
-
+// function send_request(flag, username, comment="", email=null){
