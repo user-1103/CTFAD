@@ -21,8 +21,10 @@ function notify_send(message) {
 
 function check_change(){
     let sub_element = document.getElementById("sub_but");
-    sub_element.disabled = false;
-    sub_element.innerHTML = "Re-Send?";
+    if (sub_element.disabled){
+        sub_element.disabled = false;
+        sub_element.innerHTML = "Re-Send?";
+    }
 }
 
 function check_flag() {
