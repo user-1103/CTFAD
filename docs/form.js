@@ -96,7 +96,7 @@ function send_request(){
             }
         );
     }
-    let url = `https://docs.google.com/forms/d/e/1FAIpQLSee4N57o4TtSlqtkouN9QlhDripHWae5u46D8luvNDd27XKNQ/viewform?usp=pp_url&entry.1884353497=${flag}&entry.337349188=${username}&entry.1882530921=${comment}`;
+    let url = `https://docs.google.com/forms/d/e/1FAIpQLSee4N57o4TtSlqtkouN9QlhDripHWae5u46D8luvNDd27XKNQ/formResponse?usp=pp_url&entry.1884353497=${flag}&entry.337349188=${username}&entry.1882530921=${comment}`;
     fetch(url, {mode: "no-cors"}).then(
         (res) => {
             if (res.status !== 200){
