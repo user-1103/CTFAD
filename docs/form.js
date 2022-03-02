@@ -74,4 +74,40 @@ function check_reg(){
     }
 }
 
-// function send_request(flag, username, comment="", email=null){
+function send_request(){
+    let comment = document.getElementById("comment").value;
+    let flag = document.getElementById("flag").value;
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let sub_element = document.getElementById("sub_but");
+    if (email){
+        let url = `https://docs.google.com/forms/d/e/1FAIpQLSe-eyt3GddBq6GIMglAvKpdKP_WZcoLsCSE-VovK0ZvOkgBwA/formResponse?usp=pp_url&entry.308311016=${email}&entry.662606994=${username}`;
+        fetch(url).then(
+            (res) => {
+                if (res.status !== 200){
+                    sub_element.innerHTML = `ERR: ${res.status}`;
+                } else {
+                    sub_element.innerHTML = "SENT";
+                }
+            }
+        ).catch(
+            (res) => {
+                sub_element.innerHTML = "ERR: ?";
+            }
+        );
+    }
+    let url = `https://docs.google.com/forms/d/e/1FAIpQLSee4N57o4TtSlqtkouN9QlhDripHWae5u46D8luvNDd27XKNQ/viewform?usp=pp_url&entry.1884353497=${flag}&entry.337349188=${username}&entry.1882530921=${comment}`;
+    fetch(url).then(
+        (res) => {
+            if (res.status !== 200){
+                sub_element.innerHTML = `ERR: ${res.status}`;
+            } else {
+                sub_element.innerHTML = "SENT";
+            }
+        }
+    ).catch(
+        (res) => {
+            sub_element.innerHTML = "ERR: ?";
+        }
+    );
+}
