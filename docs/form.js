@@ -82,7 +82,7 @@ function send_request(){
     let sub_element = document.getElementById("sub_but");
     if (email){
         let url = `https://docs.google.com/forms/d/e/1FAIpQLSe-eyt3GddBq6GIMglAvKpdKP_WZcoLsCSE-VovK0ZvOkgBwA/formResponse?usp=pp_url&entry.308311016=${email}&entry.662606994=${username}`;
-        fetch(url).then(
+        fetch(url, {mode: 'no-cors'}).then(
             (res) => {
                 if (res.status !== 200){
                     sub_element.innerHTML = `ERR: ${res.status}`;
@@ -97,7 +97,7 @@ function send_request(){
         );
     }
     let url = `https://docs.google.com/forms/d/e/1FAIpQLSee4N57o4TtSlqtkouN9QlhDripHWae5u46D8luvNDd27XKNQ/viewform?usp=pp_url&entry.1884353497=${flag}&entry.337349188=${username}&entry.1882530921=${comment}`;
-    fetch(url).then(
+    fetch(url, {mode: "no-cors"}).then(
         (res) => {
             if (res.status !== 200){
                 sub_element.innerHTML = `ERR: ${res.status}`;
