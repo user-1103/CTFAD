@@ -76,7 +76,7 @@ function check_reg(){
 
 function send_request(){
     let comment = document.getElementById("comment").value;
-    let flag = document.getElementById("flag").value;
+    let flag = document.getElementById("flag_guess").value;
     let username = document.getElementById("username").value;
     let email = document.getElementById("email").value;
     let sub_element = document.getElementById("sub_but");
