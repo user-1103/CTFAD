@@ -79,7 +79,7 @@ function send_request(){
     let flag = encodeURI(document.getElementById("flag_guess").value);
     let username = encodeURI(document.getElementById("username").value);
     let email = encodeURI(document.getElementById("email").value);
-    let sub_element = encodeURI(document.getElementById("sub_but"));
+    let sub_element = document.getElementById("sub_but");
     if (email){
         let url = `https://docs.google.com/forms/d/e/1FAIpQLSe-eyt3GddBq6GIMglAvKpdKP_WZcoLsCSE-VovK0ZvOkgBwA/formResponse?usp=pp_url&entry.308311016=${email}&entry.662606994=${username}`;
         fetch(url, {mode: 'no-cors'}).then(
