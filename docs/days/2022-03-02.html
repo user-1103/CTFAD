@@ -109,6 +109,7 @@
                                         class="form-control"
                                         id="username" 
                                         placeholder="haxsor1"
+                                        oninput="check_change()"
                                         pattern="\w*"
                                         required="true">
                                     <label for="username" class="form-label">
@@ -119,7 +120,8 @@
                                         associate the points for this flag with.
                                         If you haven't already, you should
                                         register this username
-                                        so you can claim prizes.
+                                        so you can claim prizes. 
+                                        Can be alphnum, no spaces.
                                     </div>
                                 </div>
                                 <div id="A2" class="mb-3 form-check d-none">
@@ -146,6 +148,7 @@
                                     <input type="email" 
                                         class="form-control"
                                         id="email" 
+                                        oninput="check_change()"
                                         placeholder="haxsor1@example.com">
                                     <label for="email" class="form-label">
                                         Email
@@ -160,6 +163,7 @@
                                 <div id="C1" class="form-floating mb-3 d-none">
                                     <input type="text" 
                                         class="form-control"
+                                        oninput="check_change()"
                                         id="comment" 
                                         placeholder="10/10 would hack again.">
                                     <label for="text" class="form-label">

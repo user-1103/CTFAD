@@ -19,6 +19,12 @@ function notify_send(message) {
     valid_note.innerHTML = message;
 }
 
+function check_change(){
+    let sub_element = document.getElementById("sub_but");
+    sub_element.disabled = false;
+    sub_element.innerHTML = "Re-Send?";
+}
+
 function check_flag() {
     let flag_guess = document.getElementById("flag_guess").value;
     let flag_hash = document.getElementById("flag_hash").innerHTML;
@@ -55,6 +61,7 @@ function check_flag() {
             notify_send('?');
         }
     );
+    check_change();
 }
 
 function check_comment(){
@@ -65,6 +72,7 @@ function check_comment(){
     } else {
         comment_element.classList.add("d-none");
     }
+    check_change();
 }
 
 function check_reg(){
@@ -75,6 +83,7 @@ function check_reg(){
     } else {
         email_element.classList.add("d-none");
     }
+    check_change()
 }
 
 function send_request(){
