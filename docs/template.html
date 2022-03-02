@@ -93,12 +93,16 @@
                             </ul>
                             <form>
                                 <div class="form-floating mb-3">
+                                    <div class="input-group mb-3">
                                     <input type="text" 
                                         class="form-control form-control-lg"
                                         id="flag_guess"
                                         required="true" 
                                         oninput="check_flag()",
                                         placeholder="CTFAD{$0m3_1337_h3r3}">
+                                    <span class="input-group-text" 
+                                        id="valid_note"> - </span>
+                                    </div>
                                     <label for="flag_guess" class="form-label">
                                         Submit Flag
                                     </label>
@@ -124,7 +128,8 @@
                                 <div id="A2" class="mb-3 form-check d-none">
                                     <input type="checkbox" 
                                     class="form-check-input" 
-                                    id="do_register">
+                                    id="do_register"
+                                    oninput="check_reg()">
                                     <label class="form-check-label" 
                                         for="do_register">
                                         Register Account?

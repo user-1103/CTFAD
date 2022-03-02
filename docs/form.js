@@ -12,7 +12,8 @@ async function digestMessage(message) {
 }
 
 function notify_send(message) {
-    console.log(message)
+    let valid_note = document.getElementById("valid_note");
+    valid_note.innerHTML = message;
 }
 
 function check_flag() {
@@ -20,18 +21,17 @@ function check_flag() {
     let flag_hash = document.getElementById("flag_hash").innerHTML;
     let username_element = document.getElementById("A1");
     let check_element = document.getElementById("A2");
-    let email_element = document.getElementById("B1");
     console.log(flag_hash);
     console.log(flag_guess);
     digestMessage(flag_guess).then(
         (guess_hash) => {
             if (guess_hash == flag_hash.trim()){
-                notify_send("Nice! Thats a valid flag!");
+                notify_send("✓");
                 username_element.classList.remove("d-none");
                 check_element.classList.remove("d-none");
                 console.log(guess_hash);
             } else {
-                notify_send("Thats not the flag!");
+                notify_send("✕");
                 username_element.classList.add("d-none");
                 check_element.classList.add("d-none");
                 console.log(guess_hash);
@@ -39,10 +39,16 @@ function check_flag() {
         }
     ).catch(
         (error) => {
-            notify_send(`Err hashing flag: ${error}`);
+            notify_send('?');
         }
     );
 }
 
-
-
+function check_reg(){
+    let email_element = document.getElementById("B1");
+    if (email_element.checked){
+        email_element.classList.remove("d-none");
+    } else {
+        email_element.classList.add("d-none");
+    }
+}
