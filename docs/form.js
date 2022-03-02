@@ -46,10 +46,10 @@ function check_flag() {
 
 function check_reg(){
     let email_element = document.getElementById("B1");
-    let check_element = document.getElementById("A2");
+    let check_element = document.getElementById("do_register");
     if (check_element.checked){
-        email_element.classList.remove("d-none");
-    } else {
         email_element.classList.add("d-none");
+    } else {
+        email_element.classList.remove("d-none");
     }
 }
