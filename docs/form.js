@@ -84,7 +84,7 @@ function send_request(){
         let url = `https://docs.google.com/forms/d/e/1FAIpQLSe-eyt3GddBq6GIMglAvKpdKP_WZcoLsCSE-VovK0ZvOkgBwA/formResponse?usp=pp_url&entry.308311016=${email}&entry.662606994=${username}`;
         fetch(url, {mode: 'no-cors'}).then(
             (res) => {
-                if (res.status !== 200){
+                if (res.status !== 0){
                     sub_element.innerHTML = `ERR: ${res.status}`;
                 } else {
                     sub_element.innerHTML = "SENT";
