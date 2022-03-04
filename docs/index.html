@@ -50,7 +50,9 @@
         <nav id="navbar" class="navbar nav-menu">
             <ul>
                 <li><a href="days/2022-03-04.html" 
-                        data-toggle="lightbox"
+                        class="portfolio-details-lightbox"
+                        data-glightbox="type: external"
+                        data-sizes="(max-width: 600px) 480px, 800px"
                         title="Today's Challenge">
                         <i class="bx bx-lock-open-alt"></i> <span>Today</span></a>
                 </li>
@@ -98,7 +100,7 @@
                 <div class="section-title">
                     <h2>Calander</h2>
                     <p>
-                    Last updated 2022-03-04 06:19:55.254056 Zulu time.
+                    Last updated 2022-03-04 06:36:01.398582 Zulu time.
                     Happy hunting!
                     </p>
                 </div>
@@ -142,6 +144,26 @@
 
 
                 
+
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-re">
+                        <div class="portfolio-wrap">
+                            <img src="days/2022-03-04-img1.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>2022-03-04</h4>
+                                <p>test1</p>
+                                <div class="portfolio-links">
+                                    <a href="days/2022-03-04.html" 
+                                       class="portfolio-details-lightbox"
+                                        data-glightbox="type: external"
+                                        title="test1">
+                                        <i class="bx bx-show-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-re">
@@ -317,7 +339,7 @@
             ...
             </p>
             <div class="social-links">
-                Social Links To Come! (That's a threat.)
+                Social Links To Come!
                 <!--
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -354,14 +376,9 @@
     <script src="assets/vendor/typed.js/typed.min.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox();
-            });
 
 </body>
 
