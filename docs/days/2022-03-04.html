@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>test1</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/CTFAD/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/CTFAD/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/CTFAD/assets/img/favicon-16x16.png">
+    <link rel="manifest" href="/CTFAD/assets/img/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/CTFAD/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/CTFAD/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/CTFAD/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/CTFAD/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/CTFAD/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/CTFAD/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="/CTFAD/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: MyResume - v4.7.0
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+    <main id="main">
+
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+
+                <div class="row gy-4">
+                    <div class="col-lg-8">
+                        <div class="portfolio-description">
+                            <h2>test1</h2>
+                            <p>
+                            While writing the backend of this site, Boris thought he would start with a hello world program. Sadly his code is a bit... enigmatic.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="portfolio-info">
+                            <h3>Challenge Metadata</h3>
+                            <ul class="text-break">
+                                <li><strong>Date</strong>: 2022-03-04</li>
+                                <li><strong>Name</strong>: test1</li>
+                                <li><strong>Category</strong>: Reverse Engineering (RE) - Figuring out how a program works.</li>
+                                <li><strong>Difficulty</strong>: 1/10</li>
+                                <li> <strong>
+                                Flag Format Regex</strong>: CTFAD{.*}</li>
+                                <li class="d-none">
+                                    <strong>Flag Sha-256 Hash</strong>: 
+                                    <span id="flag_hash">
+                                    77af778b51abd4a3c51c5ddd97204a9c3ae614ebccb75a606c3b6865aed6744e
+                                    </span>
+                                </li>
+                                <li><strong>Files</strong>: 
+                                    <a href="CTFAD-2022-03-04.zip">
+                                        CTFAD-2022-03-04.zip
+                                    </a>
+                                </li>
+                            </ul>
+                            <form onsubmit="send_request(); return false">
+                                <div class="form-floating mb-3">
+                                    <div class="input-group mb-3">
+                                    <input type="text" 
+                                        class="form-control form-control-lg"
+                                        id="flag_guess"
+                                        required="true" 
+                                        oninput="check_flag()"
+                                        placeholder="Submit Flag">
+                                    <span class="input-group-text" 
+                                        id="valid_note"> - </span>
+                                    </div>
+                                </div>
+                                <div id="A1" class="form-floating mb-3 d-none">
+                                    <input type="text" 
+                                        class="form-control"
+                                        id="username" 
+                                        placeholder="haxsor1"
+                                        oninput="check_change()"
+                                        pattern="\w{1,10}"
+                                        required="true">
+                                    <label for="username" class="form-label">
+                                        Username
+                                    </label>
+                                    <div id="username_help" class="form-text">
+                                        Enter the username you want to 
+                                        associate the points for this flag with.
+                                        If you haven't already, you should
+                                        register this username
+                                        so you can claim prizes. 
+                                        Can be alphnum or _, no spaces, up to
+                                        10 characters.
+                                    </div>
+                                </div>
+                                <div id="A2" class="mb-3 form-check d-none">
+                                    <input type="checkbox" 
+                                    class="form-check-input" 
+                                    id="do_register"
+                                    oninput="check_reg()">
+                                    <label class="form-check-label" 
+                                        for="do_register">
+                                        Register Account?
+                                    </label>
+                                </div>
+                                <div id="A3" class="mb-3 form-check d-none">
+                                    <input type="checkbox" 
+                                    class="form-check-input" 
+                                    id="do_comment"
+                                    oninput="check_comment()">
+                                    <label class="form-check-label" 
+                                        for="do_comment">
+                                        Leave Comment?
+                                    </label>
+                                </div>
+                                <div id="B1" class="form-floating mb-3 d-none">
+                                    <input type="email" 
+                                        class="form-control"
+                                        id="email" 
+                                        oninput="check_change()"
+                                        placeholder="haxsor1@example.com">
+                                    <label for="email" class="form-label">
+                                        Email
+                                    </label>
+                                    <div id="email_help" class="form-text">
+                                    This will only ever be used to verify you
+                                    own the username and the points.
+                                    It will not be shared or made publicly
+                                    visible.
+                                    </div>
+                                </div>
+                                <div id="C1" class="form-floating mb-3 d-none">
+                                    <input type="text" 
+                                        class="form-control"
+                                        oninput="check_change()"
+                                        id="comment" 
+                                        placeholder="10/10 would hack again.">
+                                    <label for="text" class="form-label">
+                                        Comment
+                                    </label>
+                                </div>
+                                <button type="submit" 
+                                class="btn btn-primary d-none" 
+                                id="sub_but">
+                                Submit Flag</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Portfolio Details Section -->
+
+    </main><!-- End #main -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/CTFAD/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="/CTFAD/assets/vendor/aos/aos.js"></script>
+    <script src="/CTFAD/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/CTFAD/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/CTFAD/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/CTFAD/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/CTFAD/assets/vendor/typed.js/typed.min.js"></script>
+    <script src="/CTFAD/assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="/CTFAD/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/CTFAD/assets/js/main.js"></script>
+    <script src="/CTFAD/form.js"></script>
+
+</body>
+
+</html>

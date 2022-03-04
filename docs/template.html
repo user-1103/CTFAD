@@ -48,28 +48,14 @@
             <div class="container">
 
                 <div class="row gy-4">
-
                     <div class="col-lg-8">
-                        <div class="portfolio-details-slider swiper">
-                            <div class="swiper-wrapper align-items-center">
-
-                                <div class="swiper-slide">
-                                    <img src="%1" alt="">
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <img src="%2" alt="">
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <img src="%3" alt="">
-                                </div>
-
-                            </div>
-                            <div class="swiper-pagination"></div>
+                        <div class="portfolio-description">
+                            <h2>%N</h2>
+                            <p>
+                            %T
+                            </p>
                         </div>
                     </div>
-
                     <div class="col-lg-4">
                         <div class="portfolio-info">
                             <h3>Challenge Metadata</h3>
@@ -80,7 +66,8 @@
                                 <li><strong>Difficulty</strong>: %?</li>
                                 <li> <strong>
                                 Flag Format Regex</strong>: %R</li>
-                                <li><strong>Flag Sha-256 Hash</strong>: 
+                                <li class="d-none">
+                                    <strong>Flag Sha-256 Hash</strong>: 
                                     <span id="flag_hash">
                                     %H
                                     </span>
@@ -176,12 +163,6 @@
                                 id="sub_but">
                                 Submit Flag</button>
                             </form>
-                        </div>
-                        <div class="portfolio-description">
-                            <h2>%N</h2>
-                            <p>
-                            %T
-                            </p>
                         </div>
                     </div>
 

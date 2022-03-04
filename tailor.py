@@ -83,19 +83,9 @@ def commit_update() -> None:
         f_out_img1_link = f'{f_out_img1}'
         f_out_img1_path = Path(f'./docs/days/{f_out_img1}')
         f_out_img1_path_in = Path(f'../ctfad-chals/{DAY}/img1.png')
-        f_out_img2 = f'{DAY}-img2.png'
-        f_out_img2_link = f'{f_out_img2}'
-        f_out_img2_path = Path(f'./docs/days/{f_out_img2}')
-        f_out_img2_path_in = Path(f'../ctfad-chals/{DAY}/img2.png')
-        f_out_img3 = f'{DAY}-img3.png'
-        f_out_img3_link = f'{f_out_img3}'
-        f_out_img3_path = Path(f'./docs/days/{f_out_img3}')
-        f_out_img3_path_in = Path(f'../ctfad-chals/{DAY}/img3.png')
         template = template.replace("%F", f_out_f)
         template = template.replace("%L", f_out_f_link)
         template = template.replace("%1", f_out_img1_link)
-        template = template.replace("%2", f_out_img2_link)
-        template = template.replace("%3", f_out_img3_link)
         with open(Path("./docs/base.html"), "r") as f_base:
             f_out = f_base.read()
             f_out = f_out.replace("%t", f_out_chal_link)
@@ -116,8 +106,6 @@ def commit_update() -> None:
             with open(Path('./docs/index.html'), "w+") as f_out_tmp:
                 f_out_tmp.write(f_out)
         sp.run(["cp", f_out_img1_path_in, f_out_img1_path], check=True)
-        sp.run(["cp", f_out_img2_path_in, f_out_img2_path], check=True)
-        sp.run(["cp", f_out_img3_path_in, f_out_img3_path], check=True)
         sp.run(["cp", f_out_f_path_in, f_out_f_path], check=True)
         print("Done.")
 
